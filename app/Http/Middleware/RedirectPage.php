@@ -10,6 +10,7 @@ class RedirectPage
 {
     /**
      * Handle an incoming request.
+     * Redirects to the original site given a shortened URL.
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \Closure $next

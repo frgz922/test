@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Validator;
 
 class ShortUrlController extends Controller
 {
+    /**
+     * @param $url
+     * @return Site Title given an URL
+     */
     function get_title($url){
         $str = file_get_contents($url);
         if(strlen($str)>0){
@@ -20,7 +24,7 @@ class ShortUrlController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Top 100 of most visited sites.
      *
      * @return \Illuminate\Http\Response
      */
@@ -35,7 +39,8 @@ class ShortUrlController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Stores a shorter URL given a site URL.
+     * Returns the created URL.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
